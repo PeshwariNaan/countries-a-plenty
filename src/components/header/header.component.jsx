@@ -8,7 +8,6 @@ const Header = () => {
   const darkMode = theme.state.darkMode;
 
   const toggleDarkMode = () => {
-    console.log(darkMode);
     if (darkMode) {
       theme.dispatch({ type: actiontypes.LIGHTMODE });
     } else {
