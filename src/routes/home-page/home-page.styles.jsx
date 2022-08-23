@@ -10,13 +10,17 @@ export const MainContainer = styled.div`
 
 export const SearchFilterContainer = styled.div`
   display: flex;
+  width: 75vw;
+  height: 15rem;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const CountryContainer = styled.div`
-  width: 85vw;
+  width: 75vw;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, auto);
   grid-gap: 10rem;
-  //background-color: hsl(0, 0%, 98%);
 `;

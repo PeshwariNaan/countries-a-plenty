@@ -6,7 +6,7 @@ export const HeaderContainer = styled.div`
   height: 8rem;
   width: 100%;
   padding: 0 0;
-  background-color:${props =>  props.isDark? 'hsl(207, 26%, 17%)' : 'hsl(0, 0%, 98%)'};
+  background-color:${props =>  props.isDark? 'hsl(209, 23%, 22%)' : 'hsl(0, 0%, 100%)'};
   align-items: center;
   justify-content: space-around;
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);

@@ -10,26 +10,26 @@ import {
   StatContainer,
 } from './card.styles';
 
-const Card = ({ country }) => {
+const Card = ({ country, isDark }) => {
   const { name, altSpellings, flags, population, region, capital } = country;
   return (
-    <CardContainer key={name.common}>
+    <CardContainer key={name.common} isDark={isDark}>
       <FlagImageContainer>
         <FlagImg src={flags.png} alt={`flag of ${name.common}`} />
       </FlagImageContainer>
       <TextContainer>
-        <CountryTitle>{name.common}</CountryTitle>
+        <CountryTitle isDark={isDark}>{name.common}</CountryTitle>
         <StatContainer>
-          <StatsTitle>Population: </StatsTitle>
-          <Stats>{new Intl.NumberFormat('en-EN').format(population)}</Stats>
+          <StatsTitle isDark={isDark}>Population: </StatsTitle>
+          <Stats isDark={isDark}>{new Intl.NumberFormat('en-EN').format(population)}</Stats>
         </StatContainer>
         <StatContainer>
-          <StatsTitle>Region: </StatsTitle>
-          <Stats>{region}</Stats>
+          <StatsTitle isDark={isDark}>Region: </StatsTitle>
+          <Stats isDark={isDark}>{region}</Stats>
         </StatContainer>
         <StatContainer>
-          <StatsTitle>Capital: </StatsTitle>
-          <Stats>{capital}</Stats>
+          <StatsTitle isDark={isDark}>Capital: </StatsTitle>
+          <Stats isDark={isDark}>{capital}</Stats>
         </StatContainer>
       </TextContainer>
     </CardContainer>
