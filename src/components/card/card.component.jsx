@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   CardContainer,
   FlagImageContainer,
@@ -10,13 +11,15 @@ import {
   StatContainer,
 } from './card.styles';
 
-const Card = ({ country, isDark }) => {
+const Card = ({ country, isDark, onClick }) => {
   const { name, altSpellings, flags, population, region, capital } = country;
   return (
-    <CardContainer key={name.common} isDark={isDark}>
+    <CardContainer key={name.common} isDark={isDark} onClick={onClick}>
+      <Link to={`/details/${name.common}`}>
       <FlagImageContainer>
         <FlagImg src={flags.png} alt={`flag of ${name.common}`} />
       </FlagImageContainer>
+      </Link>
       <TextContainer>
         <CountryTitle isDark={isDark}>{name.common}</CountryTitle>
         <StatContainer>

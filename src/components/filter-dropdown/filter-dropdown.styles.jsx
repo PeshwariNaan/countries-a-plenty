@@ -16,7 +16,7 @@ export const CustomSelect = styled(ReactSelect)`
       props.isDark ? 'hsl(209, 23%, 22%)' : 'hsl(0, 0%, 100%)'};
   }
 
-  & .Select__option {
+  /* & .Select__option {
     font-size: 1.5rem;
     font-weight: 600;
     color: ${(props) =>
@@ -24,7 +24,7 @@ export const CustomSelect = styled(ReactSelect)`
     &:hover {
       background-color: grey;
     }    
-  }
+  } */
 
   & .Select__menu {
     font-family: 'Nunito Sans';

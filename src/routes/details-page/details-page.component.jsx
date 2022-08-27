@@ -1,8 +1,8 @@
-import React from 'react'
+import {MainContainer, FlagImage, InfoContainer, CountryTitle, StatContainer, Stats, StatsTitle} from './details-page.styles'
 
 const DetailsPage = () => {
   return (
-    <div>Details Page</div>
+    <MainContainer>Details Page</MainContainer>
   )
 }
 

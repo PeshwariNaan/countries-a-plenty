@@ -1,6 +1,6 @@
 import { StyledInput, InputContainer } from './search-box.styles';
 
-const SearchBox = ({ isDark, placeholder }) => {
+const SearchBox = ({ isDark, placeholder, onChangeHandler }) => {
   return (
     <InputContainer isDark={isDark}>
     <ion-icon name="search"></ion-icon>
@@ -8,7 +8,7 @@ const SearchBox = ({ isDark, placeholder }) => {
         isDark={isDark}
         type="search"
         placeholder={placeholder}
-        onChange={(e) => onChangeHandler(e)}
+        onChange={onChangeHandler}
       />
     </InputContainer>
   );

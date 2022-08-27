@@ -15,6 +15,7 @@ export const FlagImageContainer = styled.div`
   width: 100%;
   height: 15rem;
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 `;
 
 export const FlagImg = styled.img`
@@ -27,16 +28,16 @@ export const FlagImg = styled.img`
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 0 0 2rem;
-  width: 100%;
+  flex-wrap: wrap;
+  padding: 0 0 0 1rem;  
+  width: 23rem;
   height: 15rem;
 `;
 
 export const CountryTitle = styled.h1`
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 800;
-  color: ${props => props.isDark? 'hsl(0, 0%, 100%)': 'hsl(200, 15%, 8%)'};
- 
+  color: ${props => props.isDark? 'hsl(0, 0%, 100%)': 'hsl(200, 15%, 8%)'}; 
 `;
 
 export const StatContainer = styled.div`
@@ -49,7 +50,7 @@ export const StatsTitle = styled.h2`
   font-size: 1.5rem;
   font-weight: 600;
   color: ${props => props.isDark? 'hsl(0, 0%, 100%)': 'hsl(200, 15%, 8%)'};
-  padding: 0 1rem .25rem 0;
+  padding: 0 1rem 0 0;
   margin: 0;
 `;
 
