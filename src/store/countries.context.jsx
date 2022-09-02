@@ -1,4 +1,4 @@
-import { useReducer, createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
 export const CountriesContext = createContext([]);
@@ -22,16 +22,15 @@ export const CountriesProvider = ({ children }) => {
     }
   };
 
-  useEffect(() => {
-    
+  useEffect(() => {    
     getData();
     console.log(countryData);
   }, []);
 
-  //const value = { countyData };
+  const value = { countryData, isLoading };
 
   return (
-    <CountriesContext.Provider value={{countryData, isLoading}}>
+    <CountriesContext.Provider value={value}>
       {children}
     </CountriesContext.Provider>
   );

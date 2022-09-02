@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Stat from '../country-stats/country-stat.component';
 import {
   CardContainer,
   FlagImageContainer,
@@ -12,31 +13,47 @@ import {
 } from './card.styles';
 
 const Card = ({ country, isDark, onClick }) => {
-  const { name, altSpellings, flags, population, region, capital } = country;
   return (
-    <CardContainer key={name.common} isDark={isDark} onClick={onClick}>
-      <Link to={`/details/${name.common}`}>
-      <FlagImageContainer>
-        <FlagImg src={flags.png} alt={`flag of ${name.common}`} />
-      </FlagImageContainer>
+    <CardContainer key={country.name.common} isDark={isDark} onClick={onClick}>
+      <Link to={`/details/${country.name.common}`} state={{ country }}>
+        <FlagImageContainer>
+          <FlagImg
+            src={country.flags.png}
+            alt={`flag of ${country.name.common}`}
+          />
+        </FlagImageContainer>
       </Link>
       <TextContainer>
-        <CountryTitle isDark={isDark}>{name.common}</CountryTitle>
-        <StatContainer>
-          <StatsTitle isDark={isDark}>Population: </StatsTitle>
-          <Stats isDark={isDark}>{new Intl.NumberFormat('en-EN').format(population)}</Stats>
-        </StatContainer>
-        <StatContainer>
-          <StatsTitle isDark={isDark}>Region: </StatsTitle>
-          <Stats isDark={isDark}>{region}</Stats>
-        </StatContainer>
-        <StatContainer>
-          <StatsTitle isDark={isDark}>Capital: </StatsTitle>
-          <Stats isDark={isDark}>{capital}</Stats>
-        </StatContainer>
+        <CountryTitle isDark={isDark}>{country.name.common}</CountryTitle>
+        <Stat title="Population:" isDark={isDark}>
+          {new Intl.NumberFormat('en-EN').format(country.population)}
+        </Stat>
+        <Stat title="Region:" isDark={isDark}>
+          {country.region}
+        </Stat>
+        <Stat title="Capital:" isDark={isDark}>
+          {country.capital}
+        </Stat>
       </TextContainer>
     </CardContainer>
   );
 };
 
 export default Card;
+
+{
+  /* <StatContainer>
+<StatsTitle isDark={isDark}>Population: </StatsTitle>
+<Stats isDark={isDark}>
+  {new Intl.NumberFormat('en-EN').format(country.population)}
+</Stats>
+</StatContainer>
+<StatContainer>
+<StatsTitle isDark={isDark}>Region: </StatsTitle>
+<Stats isDark={isDark}>{country.region}</Stats>
+</StatContainer>
+<StatContainer>
+<StatsTitle isDark={isDark}>Capital: </StatsTitle>
+<Stats isDark={isDark}>{country.capital}</Stats> */
+}
+// </StatContainer>

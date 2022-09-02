@@ -9,6 +9,7 @@ export const CardContainer = styled.div`
   overflow: hidden;
   background-color:${props =>  props.isDark? 'hsl(209, 23%, 22%)' : 'hsl(0, 0%, 100%)'};
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: all 1s linear;
 `;
 
 export const FlagImageContainer = styled.div`

@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect, useContext } from 'react';
+import { Fragment, useState, useContext } from 'react';
 import { ThemeContext } from '../../store/theme.context';
 import { CountriesContext } from '../../store/countries.context';
 import SearchBox from '../../components/search-box/search-box.component';
@@ -35,7 +35,7 @@ const HomePage = () => {
     ? countryData
     : countryData.filter((country) => {
         return filter === country.region;
-      });
+      });      
 
 
   const onSearchChange = (e) => {
@@ -67,8 +67,8 @@ const HomePage = () => {
           {isLoading ? (
             <Spinner />
           ) : (
-            filteredCountries.map((country, idx) => {
-              return <Card key={idx} country={country} isDark={darkMode} />;
+            filteredCountries.map((countryFUCKYOU, idx) => {
+              return <Card key={idx} country={countryFUCKYOU} isDark={darkMode} />;
             })
           )}
         </CountryContainer>
