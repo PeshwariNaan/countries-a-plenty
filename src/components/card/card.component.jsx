@@ -41,19 +41,4 @@ const Card = ({ country, isDark, onClick }) => {
 
 export default Card;
 
-{
-  /* <StatContainer>
-<StatsTitle isDark={isDark}>Population: </StatsTitle>
-<Stats isDark={isDark}>
-  {new Intl.NumberFormat('en-EN').format(country.population)}
-</Stats>
-</StatContainer>
-<StatContainer>
-<StatsTitle isDark={isDark}>Region: </StatsTitle>
-<Stats isDark={isDark}>{country.region}</Stats>
-</StatContainer>
-<StatContainer>
-<StatsTitle isDark={isDark}>Capital: </StatsTitle>
-<Stats isDark={isDark}>{country.capital}</Stats> */
-}
-// </StatContainer>
+

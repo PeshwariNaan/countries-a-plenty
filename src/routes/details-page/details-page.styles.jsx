@@ -1,13 +1,23 @@
 import styled from 'styled-components';
+import { StyledButton } from '../../components/button/button.styles';
 
 export const MainContainer = styled.div`
   display: flex;
+  flex-direction: column;
   height: 100%;
   min-height: 100vh;
   background-color: ${(props) =>
     props.isDark ? 'hsl(207, 26%, 17%)' : 'hsl(0, 0%, 98%)'};
   transition: all 0.5s linear;
 `;
+
+export const BackButtonContainer = styled.div`
+  display: flex;
+  margin: 0 auto;
+  height: 20rem;
+  width: 70vw;
+  align-items: center;
+`
 
 export const DetailsContainer = styled.div`
   display: grid;
@@ -27,7 +37,7 @@ export const InfoContainer = styled.div`
   grid-column: 2 / 3;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 10% 70% 20%;
+  grid-template-rows: 10% 55% 35%;
   margin-left: 5rem;
 `;
 
@@ -62,44 +72,30 @@ export const DetailsLRightContainer = styled.div`
   margin-top: 1rem;
 `;
 
-export const StatContainer = styled.div`
-  display: flex;
-  width: max-content;
-  align-items: flex-end;
-  margin: 0 0 1rem 0;
-  padding: 0;
-`;
-
-export const StatsTitle = styled.h2`
-  width: max-content;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: ${(props) =>
-    props.isDark ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'};
-  padding: 0 1rem 0 0;
-  margin: 0;
-`;
-
-export const Stats = styled.p`
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: ${(props) =>
-    props.isDark ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'};
-  padding: 0;
-  margin: 0;
-`;
-
 export const BorderButtonsContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   grid-column: 1 / -1;
   grid-row: 3 / 4;
+  width: 100%;
+  align-items: center;
+  margin-left: 2rem;
 
   h2 {
-    font-size: 1.75rem;
-    color: orange;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: ${(props) =>
+    props.isDark ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'};
+    margin-right: 1rem;
   }
 
 `;
+
+export const BackButton = styled(StyledButton)`
+  margin: 0;
+  height: 4rem;
+  width: 12rem;
+  justify-content: space-between;
+`
 
 

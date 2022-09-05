@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const StatContainer = styled.div`
   display: flex;
-  width: 100%;
+  width: max-content;
   align-items: flex-end;
+  margin-bottom: ${props => props.bGap? '1rem': '0'}
   `
 
 export const StatsTitle = styled.h2`

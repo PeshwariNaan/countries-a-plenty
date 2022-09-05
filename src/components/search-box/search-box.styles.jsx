@@ -15,12 +15,16 @@ export const InputContainer = styled.div`
     align-self: center;
     padding-left: 2rem;
   }
+
+  @media (max-width: 1250px) {
+    width: 35rem;
+  }
 `;
 
 
 export const StyledInput = styled.input`
   -webkit-appearance: none;
-  width: 40rem;
+  //width: 40rem;
   padding: 0 0 0 3rem;  
   height: 100%;
  
@@ -33,7 +37,10 @@ export const StyledInput = styled.input`
   margin-bottom: 3rem;
 
     &::placeholder{
-    color: ${props => props.isDark ? '#FDF5E6' : '#000000'};
-    
+    color: ${props => props.isDark ? '#FDF5E6' : '#000000'};    
+  }
+
+  @media (max-width: 1250px) {
+    //width: 30rem;
   }
 `;

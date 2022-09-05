@@ -1,12 +1,13 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ThemeContext } from '../../store/theme.context';
 import { actiontypes } from '../../store/theme.context';
-import { HeaderContainer, Title, DarkModeToggle } from './header.styles';
+import { HeaderContainer, Title, DarkModeToggle, ContentContainer } from './header.styles';
 
 const Header = () => {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
-
+  const navigate = useNavigate()
   const toggleDarkMode = () => {
     if (darkMode) {
       theme.dispatch({ type: actiontypes.LIGHTMODE });
@@ -17,7 +18,8 @@ const Header = () => {
 
   return (
     <HeaderContainer isDark={darkMode}>
-      <Title isDark={darkMode}>Where in the world?</Title>
+      <ContentContainer>
+      <Title isDark={darkMode} onClick={() => navigate('/')}>Where in the world?</Title>
       <DarkModeToggle isDark={darkMode}>
         <ion-icon
           onClick={toggleDarkMode}
@@ -25,6 +27,7 @@ const Header = () => {
         ></ion-icon>{' '}
          Dark Mode 
       </DarkModeToggle>
+      </ContentContainer>
     </HeaderContainer>
   );
 };
