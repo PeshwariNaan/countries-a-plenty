@@ -67,8 +67,8 @@ const HomePage = () => {
           {isLoading ? (
             <Spinner />
           ) : (
-            filteredCountries.map((countryFUCKYOU, idx) => {
-              return <Card key={idx} country={countryFUCKYOU} isDark={darkMode} />;
+            filteredCountries.map((country, idx) => {
+              return <Card key={idx} country={country} isDark={darkMode} />;
             })
           )}
         </CountryContainer>

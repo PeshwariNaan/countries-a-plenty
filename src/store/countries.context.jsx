@@ -13,7 +13,7 @@ export const CountriesProvider = ({ children }) => {
       const response = await axios.get(
         `https://restcountries.com/v3.1/all?fields=name,altSpellings,capital,population,region,flags,subregion,tld,currencies,languages,borders,cca3`
       );
-      console.log(response.data);
+      console.log("data from context", response.data);
       setCountryData(response.data);
       setIsLoading(false);
     } catch (error) {
@@ -24,7 +24,7 @@ export const CountriesProvider = ({ children }) => {
 
   useEffect(() => {    
     getData();
-    console.log(countryData);
+    
   }, []);
 
   const value = { countryData, isLoading };

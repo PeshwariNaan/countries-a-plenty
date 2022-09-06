@@ -1,9 +1,10 @@
-import { useContext, useEffect, useState, useMemo } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ThemeContext } from '../../store/theme.context';
 import { CountriesContext } from '../../store/countries.context';
 import Button from '../../components/button/button.component';
 import Stat from '../../components/country-stats/country-stat.component';
+import Spinner from '../../components/spinner/spinner.component';
 import {
   MainContainer,
   BackButtonContainer,
@@ -18,37 +19,37 @@ import {
 } from './details-page.styles';
 
 const DetailsPage = () => {
-  //const [borderCountryData, setBorderCountryData] = useState([])
+  const [borderCountryData, setBorderCountryData] = useState([])
   const { state } = useLocation();
   const { country } = state || {};
   const theme = useContext(ThemeContext);
-  const { countryData } = useContext(CountriesContext);
+  const { countryData, isLoading } = useContext(CountriesContext);
   const darkMode = theme.state.darkMode;
   const borderCountriesCodes = Object.values(country.borders);
   const navigate = useNavigate();
-
+  
   const getBorderCountryData = () => {
     let borderCountries = [];
     let borders = borderCountriesCodes;
-    for (let i = 0; i < borders.length; i++) {
-      const result = countryData.find((b) => b.cca3 === borders[i]);
-      borderCountries.push(result);
-    }
-    return borderCountries;
-    // setBorderCountryData(borderCountries)
+      for (let i = 0; i < borders.length; i++) {
+        const result = countryData.find((b) => b.cca3 === borders[i]);
+        borderCountries.push(result);
+      }
+      setBorderCountryData(borderCountries)    
   };
-  // useEffect(() => {
-  //   getBorderCountryData()
-  //   console.log("Re-rendered")
-  // }, []);
+  useEffect(() => {
+    if(isLoading){
+      navigate('/')
+    }else {
+      getBorderCountryData()
+    }
+  }, [country, isLoading])  
 
-  const borderCountryData = getBorderCountryData();
-  console.log(borderCountryData);
-  //console.log('borderCountryData: ', borderCountryData);
-  //setBorderCountryData(borderCountryData)
+  
+  
 
   return (
-    <MainContainer isDark={darkMode}>
+    <MainContainer isDark={darkMode}>     
       <BackButtonContainer>
         <BackButton onClick={() => navigate(-1)} isDark={darkMode}>
           <span style={{ marginRight: '2rem' }}>
@@ -95,16 +96,20 @@ const DetailsPage = () => {
           </DetailsLRightContainer>
           <BorderButtonsContainer isDark={darkMode}>
             <h2>Border Countries:</h2>
-            {borderCountryData.length > 0 ? (
+            {isLoading ? <Spinner/> :(
+            borderCountryData && borderCountryData.length > 0 ? (
               borderCountryData.map((data, idx) => {
                 return <Button key={idx} country={data} isDark={darkMode} />;
               })
             ) : (
               <h2>None</h2>
+            )
             )}
           </BorderButtonsContainer>
         </InfoContainer>
       </DetailsContainer>
+    
+      
     </MainContainer>
   );
 };

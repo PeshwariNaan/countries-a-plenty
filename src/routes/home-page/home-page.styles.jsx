@@ -45,5 +45,6 @@ export const CountryContainer = styled.div`
 
   @media (max-width: 600px) {
     grid-template-columns: auto;
+    grid-gap: 5rem;
   }
 `;

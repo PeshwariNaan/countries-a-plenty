@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StyledButton = styled.button`
   width: 10rem;
   height: 3rem;
+  min-width: max-content;
   margin: 0.5rem 0.5rem 0.5rem 0.5rem;
   border-style: none;
   text-align: center;

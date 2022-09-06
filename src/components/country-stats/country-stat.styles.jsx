@@ -3,8 +3,11 @@ import styled from "styled-components";
 export const StatContainer = styled.div`
   display: flex;
   width: max-content;
-  align-items: flex-end;
-  margin-bottom: ${props => props.bGap? '1rem': '0'}
+  margin-bottom: ${props => props.bGap? '1rem': '0'};
+  @media (max-width: 1200px) {
+    width: auto;    
+  }
+  
   `
 
 export const StatsTitle = styled.h2`
