@@ -33,18 +33,13 @@ Users should be able to:
 
 ### Screenshot
 
-<!-- ![Desk-top view (dark)](.src/assets/Screenshot-dt-dark-small.png)
-![Desk-top view (light)](.src/assets/Screenshot-dt-light-small.png)
-![Mobile view (light) ](.src/assets/Screenshot-mobile-dark-small.png)
-![Mobile view (dark) ](.src/assets/Screenshot-mobile-light-small.png) -->
+
+![Desk-top view (dark)](src/assets/Screenshot-dt-dark-small.png)
+![Desk-top view (light)](src/assets/Screenshot-dt-light-small.png)
+![Mobile view (dark) ](src/assets/Screenshot-mobile-dark-small.png)
+![Mobile view (light) ](src/assets/Screenshot-mobile-light-small.png)
 
 
-![Desk-top view (dark)](src\assets\Screenshot-dt-dark-small.png)
-![Desk-top view (light)](src\assets\Screenshot-dt-light-small.png)
-![Mobile view (dark) ](src\assets\Screenshot-mobile-dark-small.png)
-![Mobile view (light) ](src\assets\Screenshot-mobile-light-small.png)
-
-C:\Users\PeshwariNaan\Desktop\Front-end-mentor\countries-app\countries\src\assets\Screenshot-dt-light-small.png
 ### Links
 
 - Solution URL: [Github repo](https://github.com/PeshwariNaan/frontend-mentor-todo-list)
