@@ -4,7 +4,7 @@ import { StyledButton } from '../../components/button/button.styles';
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
+  max-height: 100%;
   min-height: 100vh;
   background-size: cover;
   background-color: ${(props) =>
@@ -31,7 +31,7 @@ export const DetailsContainer = styled.div`
   min-height: 25rem;
 
   @media (max-width: 1200px) {
-    grid-template-rows: minmax(30rem, 70rem) minmax(30rem, 150rem);
+    grid-template-rows: minmax(30rem, 70rem) minmax(30rem, 70rem);
     grid-template-columns: minmax(30rem, 100rem);
     row-gap: 5rem;
   }
@@ -40,10 +40,10 @@ export const DetailsContainer = styled.div`
     row-gap: 1rem;
   }
   @media (max-width: 650px) {
-    grid-template-rows: minmax(30rem, 50rem) minmax(30rem, 500rem);
+    grid-template-rows: minmax(30rem, 50rem) minmax(50rem, 50rem);
   }
   @media (max-width: 450px) {
-    grid-template-rows: minmax(20rem, 50rem) minmax(30rem, 100rem);
+    grid-template-rows: minmax(20rem, 50rem) minmax(50rem, 50rem);
   }
 `;
 
@@ -59,7 +59,8 @@ export const FlagImage = styled.img`
     grid-column: 1 / -1;
     width: 50rem;
     place-self: center;
-    //padding: 0 5rem;
+    padding: 0 1rem;
+    
   }
 `;
 
@@ -131,7 +132,7 @@ export const BorderButtonsContainer = styled.div`
   grid-column: 1 / -1;
   grid-row: 3 / 4;
   width: 100%;
-  height: 100%;
+  height: min-content;
   align-items: flex-start;
   margin-left: 2rem;
 
