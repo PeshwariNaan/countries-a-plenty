@@ -4,7 +4,7 @@ import { StyledButton } from './button.styles';
 
 const Button = ({ country, isDark }) => {
   return (
-    <Link to={`/details/${country.name.common}`} state={{country}} >
+    <Link to={`/countries-a-plenty/details/${country.name.common}`} state={{country}} >
       <StyledButton isDark={isDark}>{country.name.common}</StyledButton>
     </Link>
   );
