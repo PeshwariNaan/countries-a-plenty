@@ -9,8 +9,8 @@ function App() {
     <Fragment>
       <Header />
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/details/:name' element={<DetailsPage />} />      
+        <Route path='/countries-a-plenty' element={<HomePage />} />
+        <Route path='/countries-a-plenty/details/:name' element={<DetailsPage />} />      
       </Routes>
     </Fragment>
   );
