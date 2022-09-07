@@ -15,7 +15,7 @@ import {
 const Card = ({ country, isDark, onClick }) => {
   return (
     <CardContainer key={country.name.common} isDark={isDark} onClick={onClick}>
-      <Link to={`/countries-a-plenty/details/${country.name.common}`} state={{ country }}>
+      <Link to={`/countries-a-plenty/details/${country.cca3}`} state={{ country }}>
         <FlagImageContainer>
           <FlagImg
             src={country.flags.png}
