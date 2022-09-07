@@ -42,8 +42,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github repo](https://github.com/PeshwariNaan/frontend-mentor-todo-list)
-- Live Site URL: [Live link](https://peshwarinaan.github.io/frontend-mentor-todo-list/)
+- Solution URL: [Github repo](https://github.com/PeshwariNaan/countries-a-plenty)
+- Live Site URL: [Live link](https://peshwarinaan.github.io/countries-a-plenty/)
 
 ## My process
 
