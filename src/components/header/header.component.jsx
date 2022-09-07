@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <HeaderContainer isDark={darkMode}>
       <ContentContainer>
-      <Title isDark={darkMode} onClick={() => navigate('/')}>Where in the world?</Title>
+      <Title isDark={darkMode} onClick={() => navigate('/countries-a-plenty')}>Where in the world?</Title>
       <DarkModeToggle isDark={darkMode}>
         <ion-icon
           onClick={toggleDarkMode}

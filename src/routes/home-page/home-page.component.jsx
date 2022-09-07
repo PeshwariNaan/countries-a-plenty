@@ -45,6 +45,7 @@ const HomePage = () => {
 
   const onFilterChange = (e) => {
     setFilter(e.value);
+    setSearchField('')
   };
 
   return (
