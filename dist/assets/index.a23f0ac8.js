@@ -266,7 +266,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   color: ${e=>e.isDark?"hsl(0, 0%, 100%)":"hsl(200, 15%, 8%)"};
   padding: 0;
   margin: 0;
-`;const Yd=({country:e,isDark:t,onClick:n})=>xe(Zx,{isDark:t,onClick:n,children:[I(sm,{to:`/countries-a-plenty/details/${e.name.common}`,state:{country:e},children:I(eC,{children:I(tC,{src:e.flags.png,alt:`flag of ${e.name.common}`})})}),xe(nC,{children:[I(rC,{isDark:t,children:e.name.common}),I(kt,{title:"Population:",isDark:t,children:new Intl.NumberFormat("en-EN").format(e.population)}),I(kt,{title:"Region:",isDark:t,children:e.region}),I(kt,{title:"Capital:",isDark:t,children:e.capital})]})]},e.name.common),iC=J.div`
+`;const Yd=({country:e,isDark:t,onClick:n})=>xe(Zx,{isDark:t,onClick:n,children:[I(sm,{to:`/countries-a-plenty/details/${e.cca3}`,state:{country:e},children:I(eC,{children:I(tC,{src:e.flags.png,alt:`flag of ${e.name.common}`})})}),xe(nC,{children:[I(rC,{isDark:t,children:e.name.common}),I(kt,{title:"Population:",isDark:t,children:new Intl.NumberFormat("en-EN").format(e.population)}),I(kt,{title:"Region:",isDark:t,children:e.region}),I(kt,{title:"Capital:",isDark:t,children:e.capital})]})]},e.name.common),iC=J.div`
   height: 60vh;
   width: 100%;
   display: flex;
@@ -349,7 +349,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
   transition: all 1s linear;
   cursor: pointer;
-`,cC=({country:e,isDark:t})=>I(sm,{to:`/countries-a-plenty/details/${e.name.common}`,state:{country:e},children:I(F0,{isDark:t,children:e.name.common})}),fC=J.div`
+`,cC=({country:e,isDark:t})=>I(sm,{to:`/countries-a-plenty/details/${e.cca3}`,state:{country:e},children:I(F0,{isDark:t,children:e.name.common})}),fC=J.div`
   display: flex;
   flex-direction: column;
   max-height: 100%;
