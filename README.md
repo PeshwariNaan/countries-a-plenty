@@ -90,7 +90,7 @@ Last but not least, I learned how to deal with two filters acting simultaneously
 
 ### Continued development
 
-Everything in this industry is developing constantly. Sometimes for better, sometimes not. I continue to explore the changes happening in areas like react-router-dom and trying to find tools that save time and work well without a huge level of added complexity. I'm developing faster in the sense of knowing that some potential solution (no matter how shiny and cool it looks) might not be a efficient direction. 
+Everything in this industry is developing constantly. Sometimes for better, sometimes not. I continue to explore the changes happening in areas like react-router-dom for better navigation patterns and trying to find other tools that save time and work well without a huge level of added complexity. I'm developing faster in the sense of knowing that some potential solutions (no matter how shiny and cool they look) might not be an efficient direction to go. 
 
 ### Useful resources
 
