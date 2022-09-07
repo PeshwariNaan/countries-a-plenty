@@ -12,14 +12,12 @@ import {
 } from './home-page.styles';
 
 const HomePage = () => {
- 
+  const { countryData, isLoading } = useContext(CountriesContext);
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
   const [filter, setFilter] = useState('');
   const [searchField, setSearchField] = useState('');
   const [searchedCountries, setSearchedCountries] = useState([]);
-  const theme = useContext(ThemeContext);
-  const darkMode = theme.state.darkMode;
-  const { countryData, isLoading } = useContext(CountriesContext);
-
 
   const options = [
     { value: '', label: 'All' },
@@ -30,22 +28,23 @@ const HomePage = () => {
     { value: 'Oceania', label: 'Oceania' },
   ];
 
-
   const filteredCountries = !filter
     ? countryData
     : countryData.filter((country) => {
         return filter === country.region;
-      });      
+      });
 
-
-  const onSearchChange = (e) => {
-    const searchFieldString = e.target.value.toLocaleLowerCase();
-    setSearchField(searchFieldString);
+  const searchItems = (e) => {
+    const searchFieldItems = e.target.value.toLocaleLowerCase();
+    setSearchField(searchFieldItems);
+    const searchedData = filteredCountries.filter((c) => {
+      return c.name.common.toLocaleLowerCase().includes(searchFieldItems);
+    });
+    setSearchedCountries(searchedData);
   };
 
   const onFilterChange = (e) => {
     setFilter(e.value);
-    console.log(filter);
   };
 
   return (
@@ -54,8 +53,9 @@ const HomePage = () => {
         <SearchFilterContainer isDark={darkMode}>
           <SearchBox
             isDark={darkMode}
-            onChangeHandler={onSearchChange}
+            onChangeHandler={searchItems}
             placeholder={'Search for a country...'}
+            value={searchField}
           />
           <Filters
             options={options}
@@ -66,8 +66,12 @@ const HomePage = () => {
         <CountryContainer>
           {isLoading ? (
             <Spinner />
-          ) : (
+          ) : searchField.length === 0 ? (
             filteredCountries.map((country, idx) => {
+              return <Card key={idx} country={country} isDark={darkMode} />;
+            })
+          ) : (
+            searchedCountries.map((country, idx) => {
               return <Card key={idx} country={country} isDark={darkMode} />;
             })
           )}

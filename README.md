@@ -80,12 +80,13 @@ This was the first project where I have used React-select. It's just a simple np
     })    
   }
 ```
-I also learned how to pass state using the <Link> component from react-router-dom 6. This was a very cool thing because you can pass state to the component that the link points to as seen below. This trick worked out great for how I was passing state in this project. I could pass the entire country object with the link to the details page and deconstruct what I need from it there.
+Additionally I learned how to pass state using the <Link> component from react-router-dom 6. This was a very cool thing because you can pass state to the component that the link points to as seen below. This trick worked out great for how I was passing state in this project. I could pass the entire country object with the link to the details page and deconstruct what I need from it there.
 
 ```
 <Link to={`/details/${country.name.common}`} state={{ country }}>
 
 ```
+Last but not least, I learned how to deal with two filters acting simultaneously and give the correct result. In this project we can filter countries by region and also do a search on that result with an input value from a search field. I was under the impression I had to make this work with use of a useEffect but that was not the case.
 
 ### Continued development
 
