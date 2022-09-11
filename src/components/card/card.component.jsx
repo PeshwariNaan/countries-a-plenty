@@ -4,12 +4,9 @@ import Stat from '../country-stats/country-stat.component';
 import {
   CardContainer,
   FlagImageContainer,
-  StatsTitle,
-  Stats,
   CountryTitle,
   TextContainer,
   FlagImg,
-  StatContainer,
 } from './card.styles';
 
 const Card = ({ country, isDark, onClick }) => {

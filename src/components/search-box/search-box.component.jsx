@@ -9,6 +9,7 @@ const SearchBox = ({ isDark, placeholder, onChangeHandler }) => {
         type="search"
         placeholder={placeholder}
         onChange={onChangeHandler}
+        aria-label="Search"
       />
     </InputContainer>
   );
