@@ -5,9 +5,8 @@ export const GlobalStyle = createGlobalStyle`
       --bg: ${({ theme }) => theme.bg};
       --ele: ${({ theme }) => theme.ele};
       --text: ${({ theme }) => theme.text};
-      --shadow: rgba(0,0,0,.3);
-   }
-    
+      --shadow: rgba(0, 0, 0, 0.1);
+   }    
 `
 export const darkTheme = {
 	bg: 'hsl(207, 26%, 17%)',

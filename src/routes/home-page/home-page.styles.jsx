@@ -6,7 +6,7 @@ export const MainContainer = styled.div`
     min-width: 100%;
     height: 100%;
     min-height: 100vh;
-    background-color: ${props => props.isDark? 'hsl(207, 26%, 17%)': 'hsl(0, 0%, 98%)'};
+    background-color: var(--bg);
     transition: all .5s linear;
 `
 

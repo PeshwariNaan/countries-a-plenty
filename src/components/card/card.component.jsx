@@ -9,10 +9,13 @@ import {
   FlagImg,
 } from './card.styles';
 
-const Card = ({ country, isDark, onClick }) => {
+const Card = ({ country, onClick }) => {
   return (
-    <CardContainer key={country.name.common} isDark={isDark} onClick={onClick}>
-      <Link to={`/countries-a-plenty/details/${country.cca3}`} state={{ country }}>
+    <CardContainer key={country.name.common} onClick={onClick}>
+      <Link
+        to={`/countries-a-plenty/details/${country.cca3}`}
+        state={{ country }}
+      >
         <FlagImageContainer>
           <FlagImg
             src={country.flags.png}
@@ -21,21 +24,15 @@ const Card = ({ country, isDark, onClick }) => {
         </FlagImageContainer>
       </Link>
       <TextContainer>
-        <CountryTitle isDark={isDark}>{country.name.common}</CountryTitle>
-        <Stat title="Population:" isDark={isDark}>
+        <CountryTitle>{country.name.common}</CountryTitle>
+        <Stat title="Population:">
           {new Intl.NumberFormat('en-EN').format(country.population)}
         </Stat>
-        <Stat title="Region:" isDark={isDark}>
-          {country.region}
-        </Stat>
-        <Stat title="Capital:" isDark={isDark}>
-          {country.capital}
-        </Stat>
+        <Stat title="Region:">{country.region}</Stat>
+        <Stat title="Capital:">{country.capital}</Stat>
       </TextContainer>
     </CardContainer>
   );
 };
 
 export default Card;
-
-

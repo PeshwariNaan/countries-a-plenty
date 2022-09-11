@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ThemeContext } from '../../store/theme.context';
 import { CountriesContext } from '../../store/countries.context';
 import Button from '../../components/button/button.component';
 import Stat from '../../components/country-stats/country-stat.component';
@@ -19,39 +18,35 @@ import {
 } from './details-page.styles';
 
 const DetailsPage = () => {
-  const [borderCountryData, setBorderCountryData] = useState([])
+  const [borderCountryData, setBorderCountryData] = useState([]);
   const { state } = useLocation();
   const { country } = state || {};
-  const theme = useContext(ThemeContext);
   const { countryData, isLoading } = useContext(CountriesContext);
-  const darkMode = theme.state.darkMode;
   const borderCountriesCodes = Object.values(country.borders);
   const navigate = useNavigate();
-  
+
   const getBorderCountryData = () => {
     let borderCountries = [];
     let borders = borderCountriesCodes;
-      for (let i = 0; i < borders.length; i++) {
-        const result = countryData.find((b) => b.cca3 === borders[i]);
-        borderCountries.push(result);
-      }
-      setBorderCountryData(borderCountries)    
-  };
-  useEffect(() => {
-    if(isLoading){
-      navigate('/')
-    }else {
-      getBorderCountryData()
+    for (let i = 0; i < borders.length; i++) {
+      const result = countryData.find((b) => b.cca3 === borders[i]);
+      borderCountries.push(result);
     }
-  }, [country, isLoading])  
+    setBorderCountryData(borderCountries);
+  };
 
-  
-  
+  useEffect(() => {
+    if (isLoading) {
+      navigate('/');
+    } else {
+      getBorderCountryData();
+    }
+  }, [country, isLoading]);
 
   return (
-    <MainContainer isDark={darkMode}>     
+    <MainContainer>
       <BackButtonContainer>
-        <BackButton onClick={() => navigate(-1)} isDark={darkMode}>
+        <BackButton onClick={() => navigate(-1)}>
           <span style={{ marginRight: '2rem' }}>
             <ion-icon name="arrow-back-outline"></ion-icon>
           </span>
@@ -60,56 +55,54 @@ const DetailsPage = () => {
       </BackButtonContainer>
       <DetailsContainer>
         <FlagImage src={country.flags.png} />
-        <InfoContainer isDark={darkMode}>
-          <CountryTitle isDark={darkMode}>{country.name.common}</CountryTitle>
+        <InfoContainer>
+          <CountryTitle>{country.name.common}</CountryTitle>
           <DetailsLeftContainer>
-            <Stat title="Native Name:" isDark={darkMode} bGap>
+            <Stat title="Native Name:" bGap>
               {Object.values(country.name.nativeName)[0].official}
             </Stat>
-            <Stat title="Population:" isDark={darkMode} bGap>
+            <Stat title="Population:" bGap>
               {new Intl.NumberFormat('en-EN').format(country.population)}
             </Stat>
-            <Stat title="Region:" isDark={darkMode} bGap>
+            <Stat title="Region:" bGap>
               {country.region}
             </Stat>
-            <Stat title="Sub Region:" isDark={darkMode} bGap>
+            <Stat title="Sub Region:" bGap>
               {country.subregion}
             </Stat>
-            <Stat title="Capital:" isDark={darkMode} bGap>
+            <Stat title="Capital:" bGap>
               {country.capital}
             </Stat>
           </DetailsLeftContainer>
           <DetailsLRightContainer>
-            <Stat title="Top level domain:" isDark={darkMode} bGap>
+            <Stat title="Top level domain:" bGap>
               {country.tld[0]}
             </Stat>
-            <Stat title="Currencies:" isDark={darkMode} bGap>
+            <Stat title="Currencies:" bGap>
               {Object.values(country.currencies)
                 .map((obj) => obj.name)
                 .join(', ')}
             </Stat>
-            <Stat title="Languages:" isDark={darkMode} bGap>
+            <Stat title="Languages:" bGap>
               {country.languages
                 ? Object.values(country.languages).join(', ')
                 : ''}
             </Stat>
           </DetailsLRightContainer>
-          <BorderButtonsContainer isDark={darkMode}>
+          <BorderButtonsContainer>
             <h2>Border Countries:</h2>
-            {isLoading ? <Spinner/> :(
-            borderCountryData && borderCountryData.length > 0 ? (
+            {isLoading ? (
+              <Spinner />
+            ) : borderCountryData && borderCountryData.length > 0 ? (
               borderCountryData.map((data, idx) => {
-                return <Button key={idx} country={data} isDark={darkMode} />;
+                return <Button key={idx} country={data} />;
               })
             ) : (
-              <h2>None</h2>
-            )
+              <h2>No border countries</h2>
             )}
           </BorderButtonsContainer>
         </InfoContainer>
       </DetailsContainer>
-    
-      
     </MainContainer>
   );
 };

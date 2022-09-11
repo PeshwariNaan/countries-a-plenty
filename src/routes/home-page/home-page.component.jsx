@@ -1,6 +1,6 @@
 import { Fragment, useState, useContext } from 'react';
-import { ThemeContext } from '../../store/theme.context';
 import { CountriesContext } from '../../store/countries.context';
+import { ThemeContext } from '../../store/theme.context';
 import SearchBox from '../../components/search-box/search-box.component';
 import Filters from '../../components/filter-dropdown/filter-dropdown.component';
 import Card from '../../components/card/card.component';
@@ -12,9 +12,9 @@ import {
 } from './home-page.styles';
 
 const HomePage = () => {
+  const theme = useContext(ThemeContext)
+  const darkMode = theme.state.darkMode
   const { countryData, isLoading } = useContext(CountriesContext);
-  const theme = useContext(ThemeContext);
-  const darkMode = theme.state.darkMode;
   const [filter, setFilter] = useState('');
   const [searchField, setSearchField] = useState('');
   const [searchedCountries, setSearchedCountries] = useState([]);
@@ -50,17 +50,16 @@ const HomePage = () => {
 
   return (
     <Fragment>
-      <MainContainer isDark={darkMode}>
-        <SearchFilterContainer isDark={darkMode}>
+      <MainContainer>
+        <SearchFilterContainer>
           <SearchBox
-            isDark={darkMode}
             onChangeHandler={searchItems}
             placeholder={'Search for a country...'}
             value={searchField}
           />
           <Filters
-            options={options}
             isDark={darkMode}
+            options={options}
             onChange={onFilterChange}
           />
         </SearchFilterContainer>
@@ -69,11 +68,11 @@ const HomePage = () => {
             <Spinner />
           ) : searchField.length === 0 ? (
             filteredCountries.map((country, idx) => {
-              return <Card key={idx} country={country} isDark={darkMode} />;
+              return <Card key={idx} country={country}/>;
             })
           ) : (
             searchedCountries.map((country, idx) => {
-              return <Card key={idx} country={country} isDark={darkMode} />;
+              return <Card key={idx} country={country}/>;
             })
           )}
         </CountryContainer>

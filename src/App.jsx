@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { ThemeContext } from '../../store/theme.context';
-import { actiontypes } from '../../store/theme.context';
+import { ThemeContext } from './store/theme.context';
+import { actiontypes } from './store/theme.context';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/header/header.component';
 import HomePage from './routes/home-page/home-page.component';

@@ -1,11 +1,11 @@
 import React from 'react';
 import { StatContainer, StatsTitle, Stats } from './country-stat.styles';
 
-const Stat = ({ title, children, isDark ,bGap }) => {
+const Stat = ({ title, children, bGap }) => {
   return (
     <StatContainer bGap={bGap}>
-      <StatsTitle isDark={isDark}>{title}</StatsTitle>
-      <Stats isDark={isDark}>{children}</Stats>
+      <StatsTitle>{title}</StatsTitle>
+      <Stats>{children}</Stats>
     </StatContainer>
   );
 };

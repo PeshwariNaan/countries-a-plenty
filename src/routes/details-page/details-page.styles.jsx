@@ -7,8 +7,7 @@ export const MainContainer = styled.div`
   max-height: 100%;
   min-height: 100vh;
   background-size: cover;
-  background-color: ${(props) =>
-    props.isDark ? 'hsl(207, 26%, 17%)' : 'hsl(0, 0%, 98%)'};
+  background-color: var(--bg);
   transition: all 0.5s linear;
 `;
 
@@ -90,8 +89,7 @@ export const CountryTitle = styled.h1`
   font-size: 2.5rem;
   font-weight: 800;
   padding-left: 2rem;
-  color: ${(props) =>
-    props.isDark ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'};
+  color: var(--text);
   @media (max-width: 750px) {
     grid-column: 1 / -1;
   }
@@ -139,8 +137,7 @@ export const BorderButtonsContainer = styled.div`
   h2 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: ${(props) =>
-      props.isDark ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'};
+    color: var(--text);
     margin-right: 1rem;
   }
   @media (max-width: 750px) {

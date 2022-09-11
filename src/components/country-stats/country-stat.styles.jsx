@@ -6,14 +6,13 @@ export const StatContainer = styled.div`
   margin-bottom: ${props => props.bGap? '1rem': '0'};
   @media (max-width: 1200px) {
     width: auto;    
-  }
-  
+  }  
   `
 
 export const StatsTitle = styled.h2`
   font-size: 1.5rem;
   font-weight: 600;
-  color: ${props => props.isDark? 'hsl(0, 0%, 100%)': 'hsl(200, 15%, 8%)'};
+  color: var(--text);
   padding: 0 1rem 0 0;
   margin: 0;
 `;
@@ -21,7 +20,7 @@ export const StatsTitle = styled.h2`
 export const Stats = styled.p`
   font-size: 1.5rem;
   font-weight: 300;
-  color: ${props => props.isDark? 'hsl(0, 0%, 100%)': 'hsl(200, 15%, 8%)'};
+  color: var(--text);
   padding: 0;
   margin: 0;
 `;

@@ -22,7 +22,6 @@ const Filters = ({ isDark, options, onChange, value }) => {
       classNamePrefix={'Select'}
       value={value}
       onChange={onChange}     
-      isDark={isDark}
       options={options}
       placeholder="Filter by region..."    
       changeInputText={isDark? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'} 
